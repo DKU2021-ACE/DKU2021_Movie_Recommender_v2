@@ -15,6 +15,7 @@ from django.db.models.aggregates import Avg
 
 from .raw_models import RMovieUserComment
 
+from enum import Enum
 from logging import getLogger
 
 logger = getLogger(__name__)
@@ -108,7 +109,7 @@ class MovieUser(Model):
 
 ## 외부 영화 서비스 (네이버 영화) 에서 파싱된 사용자 리뷰 ORM 객체입니다.
 class MovieUserComment(Model):
-    
+
     ## primary_key
     id = IntegerField(primary_key=True,editable=False)
     
@@ -128,6 +129,26 @@ class MovieUserComment(Model):
 
     ## 스포일러 여부
     is_spoiler = BooleanField(null=False, default=False)
+
+    class EmotionType(Enum):
+        POSITIVE = 1
+        NEUTRAL = 0
+        NEGATIVE = -1
+
+    ## 추가 : 긍정, 중립, 부정에 대한 결과
+    expected_label_emotion = SmallIntegerField(null=True, choices=[(e.name, e.value) for e in EmotionType])
+    calculated_label_emotion = SmallIntegerField(null=True, choices=[(e.name, e.value) for e in EmotionType])
+
+    @classmethod
+    def get_emotion_vector(cls, emotion):
+        if emotion == 1:
+            return [0, 0, 1]
+        elif emotion == 0:
+            return [0, 1, 0]
+        elif emotion == -1:
+            return [1, 0, 0]
+        else:
+            raise ValueError("%s is not valid status" % emotion)
 
     ## 파싱된 임시 객체 RMovieUserComment 로부터 데이터를 저장하고 ORM 객체를 생성합니다.
     # 이미 해당 정보로 작성된 리뷰가 있다면 업데이트됩니다.
