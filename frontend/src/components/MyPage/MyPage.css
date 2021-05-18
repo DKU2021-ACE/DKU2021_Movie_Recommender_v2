@@ -1,0 +1,126 @@
+* {
+  text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 0;
+    }
+
+li {
+    float: right;
+}
+
+.mypageform {
+  position: absolute;
+  width: 700px;
+  height: 500px;
+  padding: 30px, 20px;
+  background-color: rgb(33, 33, 34);
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+}
+
+.loginForm h2 {
+  text-align: center;
+  margin: 30px;
+}
+
+.useridform {
+  position:absolute;
+  border-bottom: 1px solid #adadad;
+  margin-right: 20px;
+  margin-top:50px;
+  margin-left: 100px;
+  padding: 10px 10px;
+}
+
+.usernicknameform {
+  border-bottom: 1px solid #adadad;
+  margin-right: 100px;
+  margin-left:20px;
+  margin-top:50px;
+  margin-bottom:50px;
+  padding: 10px 10px;
+}
+
+.user_id {
+  width: 100%;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+  height: 25px;
+  background: none;
+}
+
+.user_nickname {
+  width: 100%;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+  height: 25px;
+  background: none;
+}
+
+.commentlist{
+  margin: 0px;
+  text-align: center;
+  padding: 0px;
+}
+
+.commentform {
+  position: absolute;
+  width: 600px;
+  height: 200px;
+  padding: 30px, 20px;
+  background-color: rgb(212, 212, 212);
+  text-align: center;
+  top: 55%;
+  left: 50%;
+  margin-top: 1%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+}
+
+.user_comment
+{
+  width: 100%;
+  border: 1px;
+  outline: none;
+  color: #636e72;
+  font-size: 16px;
+  height: 25px;
+  margin-top:15px;
+  background: none;
+  display: inline-block;
+}
+
+/*.btn_viewmore {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 720px;
+  margin-bottom: 40px;
+  width: 60%;
+  height: 40px;
+  background: linear-gradient(125deg, #81ecec, #6c5ce7, #81ecec);
+  background-position: left;
+  background-size: 200%;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: 0.4s;
+  display: inline;
+}
+
+.btn_viewmore:hover {
+  background-position: right;
+}*/
