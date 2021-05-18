@@ -21,7 +21,7 @@ function MovieListPage() {
                 console.log(response)
                 setMovies(response.payload.results)
             })
-    }, [])
+    }, [Score, Genre, Title])
 
     const onTitleHandler = (e) => {
         setTitle(e.currentTarget.value)
@@ -37,25 +37,55 @@ function MovieListPage() {
     }
 
     // 영화 필터링 시
-    const filterMovies = () => {
-        setCurrentPage(2);
-        setMovies([]);
-        dispatch(fetchMovies(CurrentPage, Title, Genre, Score))
-            .then(response => {
-                console.log(response)
-                setMovies([...Movies, ...response.payload.results])
-            })
-    }
+    // const filterMovies = () => {
+    //     setCurrentPage(2);
+    //     setMovies([]);
+    //     dispatch(fetchMovies(CurrentPage, Title, Genre, Score))
+    //         .then(response => {
+    //             console.log(response)
+    //             setMovies([...Movies, ...response.payload.results])
+    //         })
+    // }
 
     return (
         <div>
             <NavBar />
-            <br />
-            <br />
-            <br />
-            {/* <div style={{ margin: 'auto', textAlign: 'center' }}>
+            <br /><br /><br /><br /><br />
+            <section style={{ margin: 'auto', textAlign: 'center' }}>
+                장르 선택
+                <select style={{ color: 'black', marginLeft: '1%', marginRight: '1%', width: "7rem", height: "2rem" }}
+                    onChange={(e) => setGenre(e.target.value)} >
+                    <option style={{ color: 'black' }} value={""}>없음</option>
+                    <option style={{ color: 'black' }} value={1}>드라마</option>
+                    <option style={{ color: 'black' }} value={2}>판타지</option>
+                    <option style={{ color: 'black' }} value={3}>서부</option>
+                    <option style={{ color: 'black' }} value={4}>공포</option>
+                    <option style={{ color: 'black' }} value={5}>멜로/로맨스</option>
+                    <option style={{ color: 'black' }} value={6}>모험</option>
+                    <option style={{ color: 'black' }} value={7}>스릴러</option>
+                    <option style={{ color: 'black' }} value={8}>느와르</option>
+                    <option style={{ color: 'black' }} value={9}>컬트</option>
+                    <option style={{ color: 'black' }} value={10}>다큐멘터리</option>
+                    <option style={{ color: 'black' }} value={11}>코미디</option>
+                    <option style={{ color: 'black' }} value={12}>가족</option>
+                    <option style={{ color: 'black' }} value={13}>미스터리</option>
+                    <option style={{ color: 'black' }} value={14}>전쟁</option>
+                    <option style={{ color: 'black' }} value={15}>애니메이션</option>
+                    <option style={{ color: 'black' }} value={16}>범죄</option>
+                    <option style={{ color: 'black' }} value={17}>뮤지컬</option>
+                    <option style={{ color: 'black' }} value={18}>SF</option>
+                    <option style={{ color: 'black' }} value={19}>액션</option>
+                    <option style={{ color: 'black' }} value={20}>무협</option>
+                    <option style={{ color: 'black' }} value={21}>에로</option>
+                    <option style={{ color: 'black' }} value={22}>서스펜스</option>
+                    <option style={{ color: 'black' }} value={23}>서사</option>
+                    <option style={{ color: 'black' }} value={24}>블랙코미디</option>
+                    <option style={{ color: 'black' }} value={25}>실험</option>
+                    <option style={{ color: 'black' }} value={29}>공연실황</option>
+                </select>
                 평점 선택
-                <select style={{ color: 'black', marginLeft: '1%', marginRight: '1%' }} onChange={(e) => setScore(parseInt(e.target.value))} >
+                <select style={{ color: 'black', marginLeft: '1%', marginRight: '1%', width: "3rem", height: "2rem" }}
+                    onChange={(e) => setScore(e.target.value)} >
                     <option style={{ color: 'black' }} value={0}>0</option>
                     <option style={{ color: 'black' }} value={1}>1</option>
                     <option style={{ color: 'black' }} value={2}>2</option>
@@ -69,9 +99,9 @@ function MovieListPage() {
                     <option style={{ color: 'black' }} value={10}>10</option>
                 </select>
 
-                <input type='text' placeholder='영화 제목' onChange={onTitleHandler} style={{ color: 'black' }} />
-                <button style={{ backgroundColor: 'black' }} onClick={filterMovies}>검색</button>
-            </div> */}
+                <input type='text' placeholder='영화 제목' onChange={onTitleHandler}
+                    style={{ color: 'black', width: "10rem", height: "2rem", textAlign: "start", marginLeft: "2%" }} />
+            </section>
 
             <div style={{ width: '100%', margin: '0' }}>
                 <div style={{ width: '85%', margin: '1rem auto' }}>

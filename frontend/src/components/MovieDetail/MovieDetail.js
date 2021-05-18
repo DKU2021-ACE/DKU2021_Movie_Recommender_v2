@@ -34,8 +34,8 @@ function MovieDetail(props) {
     100%),
     url('${Movie.img_url}'), #1c1c1c`,
                 height: '600px',
-                backgroundSize: '100%, cover',
-                backgroundPosition: 'center, center',
+                backgroundSize: '100%, 100%',
+                backgroundPosition: 'center, top',
                 width: '100%',
                 position: 'relative'
             }}>

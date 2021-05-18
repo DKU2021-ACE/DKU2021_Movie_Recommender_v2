@@ -14,20 +14,18 @@ function RecommandPage() {
         dispatch(fetchRecommendedMovies())
             .then(response => {
                 console.log(response)
-                setRecommendedMovies(response.payload.results)
+                setRecommendedMovies(response.payload)
             })
     }, [])
 
     return (
         <div>
             <NavBar />
-            <br />
-            <br />
-            <br />
-
+            <br /><br /><br />
             <div style={{ width: '100%', margin: '0' }}>
                 <div style={{ width: '85%', margin: '1rem auto' }}>
-                    <h2 style={{ color: "white" }}> 추천 영화 목록 </h2>
+                    <h2 style={{ color: "white", display: "inline-block" }}> 추천 영화 목록 </h2>
+                    <h5 style={{ color: "white", display: "inline-block", marginLeft: "1%" }}> 조금 걸릴 수 있습니다.. </h5>
                     <hr />
                     <br />
                     <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-start' }}>
@@ -42,9 +40,7 @@ function RecommandPage() {
                             </React.Fragment>
                         ))}
                     </div>
-
                 </div>
-
                 <br />
             </div>
         </div >
