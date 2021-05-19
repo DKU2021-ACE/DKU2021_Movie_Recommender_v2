@@ -5,12 +5,12 @@ function MovieInfo(props) {
     let { title, score, genres, actors, opened_at } = props;
 
     return (
-        <Descriptions title="영화 정보" bordered>
-            <Descriptions.Item label="제목">{title}</Descriptions.Item>
-            <Descriptions.Item label="평점">{score === null ? 0 : score}</Descriptions.Item>
-            <Descriptions.Item label="장르">{genres && genres.map(genre => genre.name).join(", ")}</Descriptions.Item>
-            <Descriptions.Item label="출연">{actors && actors.map(actor => actor.name).join(", ")}</Descriptions.Item>
-            <Descriptions.Item label="개봉일">{opened_at}</Descriptions.Item>
+        <Descriptions title="" bordered>
+            <Descriptions.Item label="제목 &nbsp;">{title}</Descriptions.Item>
+            <Descriptions.Item label="평점 &nbsp;">{score === null ? 0 : score}</Descriptions.Item>
+            <Descriptions.Item label="&emsp;&emsp;&emsp;&emsp;장르 &nbsp;" >{genres && genres.map(genre => genre.name).join(", ")}</Descriptions.Item>
+            <Descriptions.Item label="출연 &nbsp;">{actors && actors.map(actor => actor.name).join(", ")}</Descriptions.Item>
+            <Descriptions.Item label="&nbsp;&nbsp;&nbsp;개봉일 &nbsp;">{opened_at}</Descriptions.Item>
         </Descriptions>
     )
 }

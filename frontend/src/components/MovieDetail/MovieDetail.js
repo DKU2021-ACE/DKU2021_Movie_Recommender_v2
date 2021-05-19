@@ -4,6 +4,7 @@ import { fetchMovieDetail } from '../../_actions/movie_action'
 import NavBar from '../NavBar/NavBar'
 import Comment from './Sections/Comment'
 import MovieInfo from './Sections/MovieInfo'
+import './MovieDetail.css'
 
 function MovieDetail(props) {
 
@@ -22,26 +23,24 @@ function MovieDetail(props) {
     return (
         <div>
             <NavBar />
-            <br />
-            <br />
-            <br />
-            <br />
+            <br /><br /><br /><br />
             {/* Header */}
             <div style={{
                 background: `linear-gradient(to bottom, rgba(0,0,0,0)
-    39%, rgba(0,0,0,0)
-    41%, rgba(0,0,0,0.65)
-    100%),
-    url('${Movie.img_url}'), #1c1c1c`,
+                39%, rgba(0,0,0,0)
+                41%, rgba(0,0,0,0.65)
+                100%),
+                url('${Movie.img_url}'), #1c1c1c`,
                 height: '600px',
                 backgroundSize: '100%, 100%',
-                backgroundPosition: 'center, top',
+                backgroundPosition: 'center, center',
                 width: '100%',
                 position: 'relative'
             }}>
                 <div>
                     <div style={{ position: 'absolute', maxWidth: '500px', bottom: '2rem', marginLeft: '2rem' }}>
                         <h2 style={{ color: 'white' }}> {Movie.name}</h2>
+                        <br />
                         <p style={{ color: 'white', fontSize: '1rem' }}>{Movie.description}</p>
                     </div>
                 </div>

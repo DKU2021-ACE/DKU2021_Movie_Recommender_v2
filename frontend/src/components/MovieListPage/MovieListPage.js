@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { fetchMovies } from '../../_actions/movie_action'
 import GridCards from '../commons/GridCards/GridCards'
 import NavBar from '../NavBar/NavBar'
-
+import './MovieListPage.css'
 
 function MovieListPage() {
     const dispatch = useDispatch()
@@ -103,15 +103,15 @@ function MovieListPage() {
                     style={{ color: 'black', width: "10rem", height: "2rem", textAlign: "start", marginLeft: "2%" }} />
             </section>
 
-            <div style={{ width: '100%', margin: '0' }}>
+            <div style={{ width: '100%', marginTop: '2rem' }}>
                 <div style={{ width: '85%', margin: '1rem auto' }}>
-                    <h2 style={{ color: "white" }}> 영화 목록 </h2>
+                    <h4 class="mv_list" style={{ color: "white" }}> 영화 목록 </h4>
                     <hr />
                     <br />
-                    <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-start' }}>
+                    <div class="movielist" style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-start' }}>
                         {Movies && Movies.map((movie, index) => (
                             <React.Fragment key={index}>
-                                <GridCards
+                                <GridCards class="moviecards"
                                     image={movie.img_url} /* img_url 뒤에 삼항 연산자로 기본 이미지 설정도 가능 (url 로) */
                                     movieId={movie.id}
                                     movieTitle={movie.name}
@@ -125,7 +125,7 @@ function MovieListPage() {
 
                 <br />
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <button style={{ color: 'black' }} onClick={loadMoreMovies}> 더 불러오기 </button>
+                    <button style={{ color: 'white', backgroundColor: 'black', border: 'none' }} onClick={loadMoreMovies}> 더 불러오기 </button>
                 </div>
                 <br />
             </div>

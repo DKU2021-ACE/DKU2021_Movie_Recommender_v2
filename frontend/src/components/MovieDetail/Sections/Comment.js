@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { fetchAnonyComments, fetchUserComments, submitComments } from '../../../_actions/comment_action'
+import '../MovieDetail.css'
 
 function Comment(props) {
 
@@ -59,29 +60,32 @@ function Comment(props) {
 
     return (
         <div>
-            ---------------------------------
+            <hr />
+            <br />
             <div>
-                익명 평가
+                <h3><b><span>익명 유저 평가</span></b></h3>
                 <br />
                 {AnonyComments.length === 0 ? '아직 평가가 없어요' : null}
                 {AnonyComments && AnonyComments.map(AnonyComment =>
                     <span>
-                        <p>
-                            닉네임 : 익명,
-                        평점 : {AnonyComment.score},
-                        감정 : {AnonyComment.calculated_label_emotion === 1 ? "긍정" : "부정"},
-                        내용: {AnonyComment.body}
-                        </p>
+                        <p style={{ color: "white" }}><span>익명</span></p>
+                        <p> <span style={{ color: "lightgrey" }}>평점 |</span> &nbsp; <span>{AnonyComment.score}&nbsp;&nbsp;&nbsp;</span>
+                            <span style={{ color: "lightgrey" }}>감정 |</span> <span>&nbsp;{AnonyComment.calculated_label_emotion === 1 ? "긍정" : "부정"}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <span style={{ color: "lightgrey" }}>내용 |</span> <span>&nbsp;{AnonyComment.body}</span>
+                        </p><br />
                     </span>
                 )}
             </div>
-            <button style={{ color: "black" }} onClick={AnonyPageDown}>Down</button>
-            <button style={{ color: "black" }} onClick={AnonyPageUp}>Up</button>
             <br />
-            ---------------------------------
+            <button class="btndown"
+                onClick={AnonyPageDown}>∨</button>
+            <button class="btnup"
+                onClick={AnonyPageUp}>∧</button>
+            <br /><br />
+            <hr /><br />
             <div>
-                유저 평가
-                <br />
+                <b>유저 평가</b>
+                <br /><br />
                 {UserComments.length === 0 ? '아직 평가가 없어요' : null}
                 {UserComments && UserComments.map(UserComment =>
                     <span>
@@ -92,14 +96,14 @@ function Comment(props) {
                         </p>
                     </span>
                 )}
-            </div>
-            ---------------------------------
+            </div><br />
+            <hr /><br />
             <div>
                 평가 하기
                 <div>
                     <ul>
                         <li style={{ float: 'left' }}>
-                            <label for={Score}>평점</label>
+                            <label for={Score}>평점 선택 &nbsp;</label>
                             <select style={{ color: "black" }} id={Score} onChange={(e) => setScore(parseInt(e.target.value))}>
                                 <option style={{ color: "black" }} value={0}>0</option>
                                 <option style={{ color: "black" }} value={1}>1</option>
@@ -114,12 +118,12 @@ function Comment(props) {
                                 <option style={{ color: "black" }} value={10}>10</option>
                             </select>
                         </li>
+                        <br />
                         <li>
-                            <textarea style={{ color: "black" }} cols="100" rows="4" onChange={(e) => setCommentToSubmit(e.target.value)}></textarea>
+                            <textarea class="insert_com" placeholder=" 여기에 코멘트를 입력하세요" cols="100" rows="4" onChange={(e) => setCommentToSubmit(e.target.value)}></textarea>
                         </li>
                     </ul>
-                    <br />
-                    <button style={{ color: "black" }} onClick={SubmitComment}>평가하기</button>
+                    <button class="btnsubmit" onClick={SubmitComment}>평가하기</button>
                 </div>
             </div>
         </div>

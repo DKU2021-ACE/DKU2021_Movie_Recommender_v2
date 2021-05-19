@@ -16,7 +16,7 @@ li {
 .mypageform {
   position: absolute;
   width: 700px;
-  height: 500px;
+  height: 200px;
   padding: 30px, 20px;
   background-color: rgb(33, 33, 34);
   text-align: center;
@@ -26,27 +26,29 @@ li {
   border-radius: 15px;
 }
 
-.loginForm h2 {
-  text-align: center;
-  margin: 30px;
-}
+
 
 .useridform {
-  position:absolute;
+  position: relative;
+  margin-right: 25rem;
+  width: 10rem;
+  height: 2rem;
+  text-align: center;
   border-bottom: 1px solid #adadad;
-  margin-right: 20px;
-  margin-top:50px;
-  margin-left: 100px;
-  padding: 10px 10px;
+  margin-top:2rem;
+
+  
 }
 
 .usernicknameform {
+  position: absolute;
   border-bottom: 1px solid #adadad;
-  margin-right: 100px;
-  margin-left:20px;
-  margin-top:50px;
-  margin-bottom:50px;
-  padding: 10px 10px;
+  width: auto ;
+  height: 2rem;
+  margin-left: 25rem;
+  margin-top:2rem;
+  
+  
 }
 
 .user_id {
@@ -77,16 +79,11 @@ li {
 
 .commentform {
   position: absolute;
-  width: 600px;
-  height: 200px;
-  padding: 30px, 20px;
-  background-color: rgb(212, 212, 212);
+  top: 70%;
+  width:100%;
   text-align: center;
-  top: 55%;
-  left: 50%;
-  margin-top: 1%;
-  transform: translate(-50%, -50%);
-  border-radius: 15px;
+  
+ 
 }
 
 .user_comment
@@ -99,7 +96,7 @@ li {
   height: 25px;
   margin-top:15px;
   background: none;
-  display: inline-block;
+
 }
 
 /*.btn_viewmore {
