@@ -1,17 +1,23 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './Components/App'
-import * as serviceWorker from './serviceWorker'
-import 'semantic-ui-css/semantic.min.css'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import { Provider } from 'react-redux';
+import { applyMiddleware, createStore } from 'redux';
+import promiseMiddleware from 'redux-promise';
+import reduxThunk from 'redux-thunk';
+import reducer from './_reducers';
+
+// 미들웨어 2개(redux-promis, redux-thunk)와 함께 redux store 생성
+const createStoreWithMiddleware = applyMiddleware(promiseMiddleware, reduxThunk)(createStore)
 
 ReactDOM.render(
-    <React.StrictMode>
-        <App/>
-    </React.StrictMode>,
-    document.getElementById('root')
+  <Provider
+    store={createStoreWithMiddleware(reducer,
+      window.__REDUX_DEVTOOLS_EXTENSION__ &&
+      window.__REDUX_DEVTOOLS_EXTENSION__()
+    )}
+  >
+    <App />
+  </Provider>
+  , document.getElementById('root')
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister()

@@ -1,0 +1,43 @@
+
+.btndown{
+    background-color: rgb(31, 31, 31);
+    margin-left: 45%;
+    text-align: center;
+    width: 100px;
+    height: 20px;
+    border: none;
+    color: white;
+}
+.btnup {
+    background-color: rgb(31, 31, 31);
+    text-align: center;
+    width: 100px;
+    height: 20px;
+    border: none;
+    color: white;
+}
+.btndown:hover{
+    background-color: skyblue;
+}
+.btnup:hover{
+    background-color: skyblue;
+}
+
+.btnsubmit{
+    margin-top: 4rem;
+    margin-left: 50%;
+    width: 100px;
+    height: 30px;
+    background-color: rgb(31, 31, 31);
+    border: none;
+    color: white;
+}
+
+.btnsubmit:hover{
+    background-color: skyblue;
+}
+
+.insert_com{
+    position: relative;
+    margin-left: -40%;
+}
