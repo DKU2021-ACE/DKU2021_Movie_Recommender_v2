@@ -127,6 +127,9 @@ class MovieUserComment(Model):
     ## 상세내용
     body = TextField(null=True)
 
+    ### 정제된 내용
+    purified_body = TextField(null=True)
+
     ## 스포일러 여부
     is_spoiler = BooleanField(null=False, default=False)
 
@@ -149,6 +152,17 @@ class MovieUserComment(Model):
             return [1, 0, 0]
         else:
             raise ValueError("%s is not valid status" % emotion)
+
+    @classmethod
+    def get_emotion_label(cls, vector):
+        if vector[2] == 1:
+            return 1
+        elif vector[1] == 1:
+            return 0
+        elif vector[0] == 1:
+            return -1
+        else:
+            raise ValueError("%s is not valid vector" % vector)
 
     ## 파싱된 임시 객체 RMovieUserComment 로부터 데이터를 저장하고 ORM 객체를 생성합니다.
     # 이미 해당 정보로 작성된 리뷰가 있다면 업데이트됩니다.
