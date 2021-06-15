@@ -24,6 +24,17 @@ logger = getLogger(__name__)
 MAX_STR_LEN = 100
 
 
+class EmotionType(Enum):
+    POSITIVE = 1
+    NEUTRAL = 0
+    NEGATIVE = -1
+
+class PartType(Enum):
+    NOUN = 0
+    ADVERB = 1
+    ADJECTIVE = 2
+    VERB = 3
+
 ## 장르 ORM 객체입니다.
 class Genre(Model):
     ## primary_key
@@ -133,10 +144,7 @@ class MovieUserComment(Model):
     ## 스포일러 여부
     is_spoiler = BooleanField(null=False, default=False)
 
-    class EmotionType(Enum):
-        POSITIVE = 1
-        NEUTRAL = 0
-        NEGATIVE = -1
+
 
     ## 추가 : 긍정, 중립, 부정에 대한 결과
     expected_label_emotion = SmallIntegerField(null=True, choices=[(e.name, e.value) for e in EmotionType])
@@ -206,4 +214,17 @@ class UserComment(Model):
     
     ## 상세내용
     body = TextField(null=True)
-    
+
+
+class EmotionWord(Model):
+    word = CharField(null=False, max_length=128)
+
+    emotion = SmallIntegerField(
+        null=False, choices=[(e.name, e.value) for e in EmotionType]
+    )
+    part = SmallIntegerField(
+        null=False, choices=[(e.name, e.value) for e in PartType]
+    )
+
+    def __str__(self):
+        return f'{self.id} : {self.word}'
