@@ -25,20 +25,18 @@ function MovieDetail(props) {
             <NavBar />
             <br /><br /><br /><br />
             {/* Header */}
-            <div style={{
-                background: `linear-gradient(to bottom, rgba(0,0,0,0)
-                39%, rgba(0,0,0,0)
-                41%, rgba(0,0,0,0.65)
-                100%),
-                url('${Movie.img_url}'), #1c1c1c`,
-                height: '600px',
-                backgroundSize: '100%, 100%',
-                backgroundPosition: 'center, center',
-                width: '100%',
-                position: 'relative'
-            }}>
+            <div
+                style={{
+                    backgroundImage: `url('${Movie.img_url}')`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'contain',
+                    backgroundPosition: '30%, 100%',
+                    height: '600px',
+                    position: 'relative'
+                }}
+            >
                 <div>
-                    <div style={{ position: 'absolute', maxWidth: '500px', bottom: '2rem', marginLeft: '2rem' }}>
+                    <div style={{ position: 'absolute', maxWidth: '500px', bottom: '2rem', marginLeft: '50%' }}>
                         <h2 style={{ color: 'white' }}> {Movie.name}</h2>
                         <br />
                         <p style={{ color: 'white', fontSize: '1rem' }}>{Movie.description}</p>

@@ -10,7 +10,7 @@ function Comment(props) {
     const [AnonyComments, setAnonyComments] = useState([])
     const [UserComments, setUserComments] = useState([])
     const [AnonyPage, setAnonyPage] = useState(1)
-    const [UserPage, setUserPage] = useState(1) // 아직 사용 안하고 있음. 유저가 적으니깐
+    const [UserPage, setUserPage] = useState(1) // 아직 사용 안하고 있음. 유저가 적어서
     const [Score, setScore] = useState(0)
     const [CommentToSubmit, setCommentToSubmit] = useState('')
 
@@ -84,49 +84,44 @@ function Comment(props) {
             <br /><br />
             <hr /><br />
             <div>
-                <b>유저 평가</b>
-                <br /><br />
+                <h3><b><span>유저 평가</span></b></h3>
+                <br />
                 {UserComments.length === 0 ? '아직 평가가 없어요' : null}
                 {UserComments && UserComments.map(UserComment =>
                     <span>
-                        <p>
-                            닉네임 : {UserComment.nickname},
-                            평점 : {UserComment.score},
-                            내용: {UserComment.body}
-                        </p>
+                        <p style={{ color: "white" }}><span>{UserComment.nickname}</span></p>
+                        <p> <span style={{ color: "lightgrey" }}>평점 |</span> &nbsp; <span>{UserComment.score}&nbsp;&nbsp;&nbsp;</span>
+                            {/* <span style={{ color: "lightgrey" }}>감정 |</span> <span>&nbsp;{UserComment.calculated_label_emotion === 1 ? "긍정" : "부정"}&nbsp;&nbsp;&nbsp;&nbsp;</span> */}
+                            <span style={{ color: "lightgrey" }}>내용 |</span> <span>&nbsp;{UserComment.body}</span>
+                        </p><br />
                     </span>
                 )}
             </div><br />
             <hr /><br />
             <div>
-                평가 하기
+                <h3><b><span>평가 하기</span></b></h3>
                 <div>
-                    <ul>
-                        <li style={{ float: 'left' }}>
-                            <label for={Score}>평점 선택 &nbsp;</label>
-                            <select style={{ color: "black" }} id={Score} onChange={(e) => setScore(parseInt(e.target.value))}>
-                                <option style={{ color: "black" }} value={0}>0</option>
-                                <option style={{ color: "black" }} value={1}>1</option>
-                                <option style={{ color: "black" }} value={2}>2</option>
-                                <option style={{ color: "black" }} value={3}>3</option>
-                                <option style={{ color: "black" }} value={4}>4</option>
-                                <option style={{ color: "black" }} value={5}>5</option>
-                                <option style={{ color: "black" }} value={6}>6</option>
-                                <option style={{ color: "black" }} value={7}>7</option>
-                                <option style={{ color: "black" }} value={8}>8</option>
-                                <option style={{ color: "black" }} value={9}>9</option>
-                                <option style={{ color: "black" }} value={10}>10</option>
-                            </select>
-                        </li>
-                        <br />
-                        <li>
-                            <textarea class="insert_com" placeholder=" 여기에 코멘트를 입력하세요" cols="100" rows="4" onChange={(e) => setCommentToSubmit(e.target.value)}></textarea>
-                        </li>
-                    </ul>
+                    <label for={Score}>평점 선택 &nbsp;</label>
+                    <select style={{ color: "black" }} id={Score} onChange={(e) => setScore(parseInt(e.target.value))}>
+                        <option style={{ color: "black" }} value={0}>0</option>
+                        <option style={{ color: "black" }} value={1}>1</option>
+                        <option style={{ color: "black" }} value={2}>2</option>
+                        <option style={{ color: "black" }} value={3}>3</option>
+                        <option style={{ color: "black" }} value={4}>4</option>
+                        <option style={{ color: "black" }} value={5}>5</option>
+                        <option style={{ color: "black" }} value={6}>6</option>
+                        <option style={{ color: "black" }} value={7}>7</option>
+                        <option style={{ color: "black" }} value={8}>8</option>
+                        <option style={{ color: "black" }} value={9}>9</option>
+                        <option style={{ color: "black" }} value={10}>10</option>
+                    </select>
+                    <br />
+                    <textarea class="insert_com" placeholder=" 여기에 코멘트를 입력하세요" cols="100" rows="4" onChange={(e) => setCommentToSubmit(e.target.value)}></textarea>
                     <button class="btnsubmit" onClick={SubmitComment}>평가하기</button>
+                    <br />
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

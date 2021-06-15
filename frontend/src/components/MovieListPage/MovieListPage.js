@@ -125,7 +125,7 @@ function MovieListPage() {
 
                 <br />
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <button style={{ color: 'white', backgroundColor: 'black', border: 'none' }} onClick={loadMoreMovies}> 더 불러오기 </button>
+                    <button class='more' style={{ color: 'black', backgroundColor: 'white', border: 'none' }} onClick={loadMoreMovies}> 더 불러오기 </button>
                 </div>
                 <br />
             </div>
