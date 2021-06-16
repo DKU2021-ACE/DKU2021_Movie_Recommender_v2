@@ -98,9 +98,10 @@ function MovieListPage() {
                     <option style={{ color: 'black' }} value={9}>9</option>
                     <option style={{ color: 'black' }} value={10}>10</option>
                 </select>
-
+                <br />
+                제목&nbsp;&nbsp;
                 <input type='text' placeholder='영화 제목' onChange={onTitleHandler}
-                    style={{ color: 'black', width: "10rem", height: "2rem", textAlign: "start", marginLeft: "2%" }} />
+                    style={{ color: 'black', width: "12rem", height: "2rem", textAlign: "start", marginTop: '1%' }} />
             </section>
 
             <div style={{ width: '100%', marginTop: '2rem' }}>
