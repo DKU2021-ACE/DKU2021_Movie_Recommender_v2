@@ -13,7 +13,7 @@
 
 컴포넌트 구성
 
-![component_diagram.png](/_images/component_diagram.png)
+![component_diagram.png](./_images/component_diagram.png)
 
 
 ## 프로젝트 설치
