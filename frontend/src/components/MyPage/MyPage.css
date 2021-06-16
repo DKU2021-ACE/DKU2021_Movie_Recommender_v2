@@ -22,7 +22,7 @@ li {
   text-align: center;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -70%);
   border-radius: 15px;
 }
 
@@ -30,14 +30,12 @@ li {
 
 .useridform {
   position: relative;
-  margin-right: 25rem;
-  width: 10rem;
+  margin-right: 22rem;
+  width: 16.5rem;
   height: 2rem;
   text-align: center;
   border-bottom: 1px solid #adadad;
   margin-top:2rem;
-
-  
 }
 
 .usernicknameform {
@@ -45,10 +43,8 @@ li {
   border-bottom: 1px solid #adadad;
   width: auto ;
   height: 2rem;
-  margin-left: 25rem;
+  margin-left: 28rem;
   margin-top:2rem;
-  
-  
 }
 
 .user_id {
@@ -80,10 +76,10 @@ li {
 .commentform {
   position: absolute;
   top: 70%;
-  width:100%;
+  left: 50%;
+  width: 700px;
   text-align: center;
-  
- 
+  transform: translate(-50%, -40%);
 }
 
 .user_comment
@@ -96,7 +92,6 @@ li {
   height: 25px;
   margin-top:15px;
   background: none;
-
 }
 
 /*.btn_viewmore {

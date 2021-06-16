@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# 영화추천플랫폼 "영화보러갈래" (v2)_frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+단국대학교 2021학년도 실무중심산학협력프로젝트 영화 추천 플랫폼 "영화보러갈래"
 
-## Available Scripts
+### frontend
 
-In the project directory, you can run:
+서비스 웹 프론트엔드 구현
 
-### `yarn start`
+개발 언어 및 프레임워크
+- nodejs
+- react
+- react_redux
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+컴포넌트 구성
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![component_diagram.png](./_images/component_diagram.png)
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 프로젝트 설치
 
-### `yarn build`
+본 프로젝트 repository를 프로젝트를 설치하고자 하는 시스템에 내려받습니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+git clone https://github.com/live2skull/DKU2020_Movie_Recommender
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### frontend 설치 및 준비
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. nodejs 설치
 
-### `yarn eject`
+    `nodejs 12` 이상의 nodejs를 시스템에 설치합니다.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. 의존 패키지 설치
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    프론트엔드 구성에 필요한 의존 패키지를 설치합니다. 설치에 수 분이 소요됩니다.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    ```
+    npm install
+    ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3. 프론트엔드 실행 테스트
 
-## Learn More
+    프론트엔드 테스트용 배포 서버를 실행합니다.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    ```
+    npm run start
+    ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    성공적으로 서버가 실행되었다면 다음 메세지가 출력됩니다.
 
-### Code Splitting
+    ```
+    Compiled successfully!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    You can now view team-movie in the browser.
 
-### Analyzing the Bundle Size
+    http://localhost:3001
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    Note that the development build is not optimized.
+    To create a production build, use yarn build.
+    ```
+    
+    해당 배포 서버로 접속해 정상적으로 동작하는지 확인합니다.
 
-### Making a Progressive Web App
+4. static 파일 컴파일
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    서비스를 위한 static 파일을 컴파일합니다. 수 분이 소요됩니다.
+    ```
+    npm run build
+    ```
+    
+    frontend 디렉터리의 `build` 폴더 내부에 컴파일된 파일들이 출력되며, 운영 상황에 맞게 static 파일을 웹 서버에 배포해 서비스합니다.

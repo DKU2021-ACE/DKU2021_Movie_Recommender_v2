@@ -7,3 +7,9 @@
 .mv_list{
         font-family: 'GmarketSansLight';
     }
+
+.more{
+    border-radius: 15px;
+    width: 100px;
+    height:30px;
+}
